@@ -1,0 +1,476 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Box Small Styling */
+.box-small {
+    background: #030a11; /* Dark blue-gray background */
+    padding: 20px; /* Generous padding for spacing */
+    border-radius: 12px; /* Slightly more rounded corners */
+    text-align: center; /* Center-align text and elements */
+    color: #ecf0f1; /* Light gray text color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More pronounced shadow for depth */
+    position: relative; /* Relative positioning for the toggle button */
+}
+
+/* Container for contact details */
+.contact-info {
+    margin: 1rem 0; /* Spacing around the contact info section */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between individual details */
+}
+
+/* Individual contact detail boxes */
+.contact-info .info-item {
+    background: #222; /* Dark background for the boxes */
+    border-radius: 8px; /* Rounded corners for a soft look */
+    padding: 1rem; /* Padding inside the box */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for contact detail boxes */
+.contact-info .info-item:hover {
+    background: #333; /* Slightly lighter background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Contact detail labels */
+.contact-info .info-item p {
+    margin: 0.5rem 0; /* Space between lines */
+    font-size: 1rem; /* Font size for details */
+    color: #fff; /* White text color for visibility */
+}
+
+/* Email link */
+.contact-info .info-item a {
+    color: #1e90ff; /* Bright blue for email link */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-info .info-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Social Media Links */
+.social-media {
+    margin-top: 1rem; /* Space above social media links */
+    display: flex;
+    gap: 1rem; /* Space between social media links */
+}
+
+.social-media a {
+    color: #1e90ff; /* Bright blue for links */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Flexbox for aligning icon and text */
+    align-items: center; /* Center items vertically */
+    gap: 0.5rem; /* Space between icon and text */
+    padding: 0.5rem; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners for links */
+    background: #333; /* Dark background for contrast */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.social-media a:hover {
+    background: #444; /* Slightly lighter background on hover */
+    color: #ff6347; /* Change color on hover */
+}
+
+.social-media i {
+    font-size: 1.2rem; /* Icon size */
+}
+
+
+/* Large Box (Right) */
+.box-large {
+    flex: 3;
+    max-width: calc(100% - 320px); /* Adjust based on side box width and margin */
+    background: #111;
+    padding: 20px; /* Increased padding for consistency */
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Top Navigation Bar in Large Box */
+.top-nav {
+    background: #222;
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+    margin-bottom: 20px; /* Space between the nav and the content */
+}
+
+.top-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Space out items */
+}
+
+.top-nav ul li {
+    margin: 0;
+}
+
+.top-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.top-nav ul li a:hover {
+    background: #333;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: fixed; /* Fixed position for the button */
+    top: 10px;
+    left: 10px; /* Position button on the left side */
+    z-index: 1000; /* Ensure the button is above other content */
+}
+
+/* Navigation Menu Styles */
+.side-nav {
+    position: fixed; /* Fixed position for the menu */
+    margin-top: 20px;
+    top: 50px;
+    left: 0; /* Align the menu to the left */
+    background: #111;
+    width: 250px; /* Adjust width as needed */
+    height: 50%;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+/* Show menu when toggle button is active */
+.side-nav.show {
+    transform: translateX(0); /* Move menu into view */
+}
+
+/* Side Navigation Menu Items */
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-nav ul li {
+    margin: 0;
+}
+
+.side-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.side-nav ul li a:hover {
+    background: #222;
+}
+
+/* Image Container */
+.image-container {
+    margin-top: 1rem; /* Adjusted margin for better spacing */
+}
+
+.about-image {
+    width: 120px; /* Passport-size */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 1rem;
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main Sections Styling with Box Shadow */
+section {
+    background: #222;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Small shadow */
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+/* Horizontal Line Styling */
+hr {
+    border: 0;
+    height: 1px;
+    background: #444; /* Adjust color to match your theme */
+    margin: 1.5rem 0; /* Adjust margin for spacing */
+}
+
+/* Skills Section Styling */
+#skills {
+    background: #1e1e1e; /* Slightly lighter dark background */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Deeper shadow for a more pronounced effect */
+}
+
+#skills h2 {
+    margin-top: 0;
+    color: #e6dfdd; /* Tomato color for the heading */
+    font-size: 1.6rem; /* Larger font size for prominence */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    letter-spacing: 1px; /* Slight spacing between letters */
+}
+
+#skills ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+#skills ul li {
+    margin: 0.5rem 0;
+    padding: 10px;
+    background: #333; /* Dark background for list items */
+    border-left: 4px solid #ff6347; /* Colorful left border for visual interest */
+    border-radius: 4px; /* Rounded corners for list items */
+    color: #eee; /* Lighter text color for better readability */
+    font-size: 1.2rem; /* Slightly larger font size for list items */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+#skills ul li:hover {
+    background: #444; /* Slightly lighter background on hover */
+    transform: translateX(10px); /* Slide effect on hover */
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 768px) {
+    #skills {
+        padding: 15px; /* Adjust padding on smaller screens */
+    }
+
+    #skills h2 {
+        font-size: 1.4rem; /* Adjust font size for the heading */
+    }
+
+    #skills ul li {
+        font-size: 1rem; /* Adjust font size for list items */
+    }
+}
+
+@media (max-width: 480px) {
+    #skills h2 {
+        font-size: 1.2rem; /* Further adjust font size for very small screens */
+    }
+
+    #skills ul li {
+        font-size: 0.9rem; /* Adjust font size for very small screens */
+    }
+}
+
+
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1rem;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #222;
+    color: #fff;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: none;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0b79d0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .box-small {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0; /* Remove margin-right on small screens */
+    }
+
+    .box-large {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the toggle button on small screens */
+    }
+
+    .side-nav {
+        display: none; /* Hide the menu by default */
+    }
+
+    .side-nav.show {
+        display: block; /* Show the menu when toggled */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image {
+        width: 100px; /* Slightly smaller image on very small screens */
+        height: 100px;
+    }
+
+    form input, form textarea {
+        font-size: 0.9rem; /* Slightly smaller text for very small screens */
+    }
+
+    .menu-toggle {
+        font-size: 1.2rem; /* Adjust button size for very small screens */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Timeline Container */
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    padding: 20px 0;
+    margin-left: 30px; /* Space for the vertical line */
+    border-left: 2px solid #dfe7ee; /* Vertical line */
+}
+
+/* Circle Dot */
+.circle-dot {
+    position: absolute;
+    left: -5px; /* Center the dot on the line */
+    width: 12px;
+    height: 12px;
+    background-color: #e0e5eb;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+/* Date */
+.timeline-date {
+    font-size: 1.1rem;
+    margin: 0 0 10px 15px;
+    color: #cfd2d6;
+}
+
+/* Title */
+.timeline-title {
+    margin: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Text */
+.timeline-text {
+    margin: 10px;
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        margin-left: 0; /* Remove left margin on small screens */
+    }
+
+    .timeline-item {
+        margin-left: 0; /* Remove left margin on small screens */
+        padding-left: 10px; /* Adjust padding */
+        border-left: none; /* Remove vertical line */
+    }
+
+    .circle-dot {
+        left: 0; /* Adjust dot position */
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-date {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .timeline-title {
+        font-size: 1.1rem; /* Adjust font size */
+    }
+
+    .timeline-text {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/IMG_4107.jpg" style="border-radius: 50%;" type="images">
+    <title>Krishna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Side Box (Small) -->
+        <div class="box-small">
+            <!-- Toggle Button (visible only on small screens) -->
+            <button id="menu-toggle" aria-label="Toggle menu" class="menu-toggle">&#9776;</button>
+
+            <!-- User Image and Contact Info -->
+            <div class="image-container">
+                <img src="images/IMG_4107.jpg" alt="Krishna Sapkota" class="about-image">
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <p>Email:</p>
+                    <p><a href="mailto:sapkotakrishna016@gmail.com">sapkotakrishna016@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <p>Location:</p>
+                    <p>Baglung, Nepal</p>
+                </div>
+                <div class="info-item">
+                    <p>Contact:</p>
+                    <p>9846899440</p>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/krishna-sapkota-a172ab250/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/sapkotakrishna1" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <!-- Large Box (Right) -->
+        <div class="box-large">
+            <!-- Navigation Menu -->
+            <nav class="side-nav" id="nav-menu">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I’m a straightforward engineering student specializing in IT, dedicated 
+                    to mastering the latest technologies and solving technical challenges. 
+                    I focus on building practical skills through hands-on projects and collaborative 
+                    work. Passionate about technology and problem-solving, I aim to leverage my 
+                    knowledge to create impactful solutions and continuously grow in the IT field.</p>
+                <hr>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>PHP, MySQL</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                
+                <!-- Timeline Container -->
+                <div class="timeline">
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2019
+                        </h3>
+                        <h4 class="timeline-title">Basic level education</h4>
+                        <p class="timeline-text">I completed my SEE from Universal Sublime Academy Baglung.</p>
+                    </div>
+            
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2021
+                        </h3>
+                        <h4 class="timeline-title">Secondary level Education</h4>
+                        <p class="timeline-text">I completed my +2 education from Vidhya Mandir Higher Secondary School Baglung.</p>
+                    </div>
+            
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2024
+                        </h3>
+                        <h4 class="timeline-title">Bachelor of Engineering in Information Technology (BEIT)</h4>
+                        <p class="timeline-text">Running Six semester.</p>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Feel free to reach out to me through the contact form below or via email.</p>
+                <form action="mailto:sapkotakrishna016@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Krishna Sapkota. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
