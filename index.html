@@ -33,6 +33,11 @@
                     <p>Contact:</p>
                     <p>9846899440</p>
                 </div>
+                <div class="info-item">
+                    <p></p>
+                    <a href="images/cv.pdf" target="_blank">View CV</a>
+                    <!-- Ensure you replace "path/to/your/cv.pdf" with the actual path to your PDF file -->
+                </div>
                 <div class="social-media">
                     <a href="https://www.linkedin.com/in/krishna-sapkota-a172ab250/" target="_blank">
                         <i class="fab fa-linkedin"></i> LinkedIn
@@ -73,7 +78,8 @@
                 <h2>Skills</h2>
                 <ul>
                     <li>HTML, CSS, JavaScript</li>
-                    <li>PHP, MySQL</li>
+                    <li>PHP, MySQL, Basic MongoDB</li>
+                    <li>Flutter, Dart</li>
                     <li>Responsive Design</li>
                 </ul>
             </section>
@@ -116,6 +122,53 @@
                     
                 </div>
             </section>
+
+
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="projects-container">
+                    <div class="project-item">
+                        <div class="project-images">
+                            <img src="images/screenshot-1.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
+                            <img src="images/screenshot-2.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
+                            <img src="images/screenshot-3.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
+                            <img src="images/screenshot-4.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
+                        </div>
+                        <div class="project-info">
+                            <p class="project-description">
+                                <strong>Description:</strong> Developed a comprehensive Student Management System to streamline student records and administrative tasks.
+                            </p>
+                            <p class="project-description">
+                                <strong>Technologies Used:</strong>
+                                <ul>
+                                    <li>PHP for backend development</li>
+                                    <li>MySQL for database management</li>
+                                    <li>HTML, CSS, and JavaScript for the frontend</li>
+                                </ul>
+                            </p>
+                            <p class="project-description">
+                                <strong>Key Features:</strong>
+                                <ul>
+                                    <li>Student registration</li>
+                                    <li>Record management</li>
+                                    <li>Real-time updates</li>
+                                </ul>
+                                Implemented robust data handling and user interface elements to enhance usability and efficiency.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat .project-item for more projects -->
+                </div>
+            
+                <!-- Lightbox Container -->
+                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                    <span class="close">&times;</span>
+                    <img id="lightbox-img" class="lightbox-img" src="" alt="Lightbox Image">
+                </div>
+            </section>
+            
             
             
 
