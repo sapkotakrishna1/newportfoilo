@@ -474,3 +474,147 @@ footer {
         font-size: 0.9rem; /* Adjust font size */
     }
 }
+
+
+
+
+/* General Styles for the Projects Section */
+#projects {
+    background: #222; /* Dark background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin-bottom: 1rem;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Space between project items */
+}
+
+.project-item {
+    background: #333; /* Dark background for project items */
+    border-radius: 8px;
+    overflow: hidden; /* Hide overflow from rounded corners */
+    flex: 1;
+    max-width: calc(50% - 20px); /* Adjust width for responsiveness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+/* Container for Project Images */
+.project-images {
+    display: flex;
+    flex-direction: row; /* Align images horizontally */
+    gap: 15px; /* Space between images */
+    padding: 10px; /* Padding around images */
+    overflow-x: auto; /* Allow horizontal scrolling if images overflow */
+    align-items: center; /* Center images vertically within the container */
+    width: 100%; /* Ensure the container spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Images within the Project Item */
+.project-image {
+    flex: 0 0 auto; /* Prevent images from shrinking or growing */
+    width: 200px; /* Set a medium width for images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit the height to maintain uniformity */
+    border-radius: 4px; /* Adds rounded corners */
+    object-fit: cover; /* Ensure images cover their container */
+    cursor: pointer; /* Indicate that the image is clickable */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Add some styling for project-info */
+.project-info {
+    padding: 15px;
+}
+
+.project-title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    margin: 0;
+    color: #e6dfdd; /* Light color for the title */
+}
+
+.project-description {
+    margin: 10px 0 0; /* Spacing for description */
+    color: #ccc; /* Light color for the text */
+    font-size: 1rem; /* Font size for readability */
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    align-items: center; /* Center the content */
+    justify-content: center; /* Center the content */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.lightbox-img {
+    max-width: 90%; /* Responsive max-width */
+    max-height: 80vh; /* Responsive max-height */
+    margin: auto;
+    display: block; /* Block-level image */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .project-item {
+        max-width: calc(100% - 20px); /* Full width for small screens */
+    }
+
+    .project-image {
+        width: 150px; /* Slightly smaller width for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title {
+        font-size: 1.2rem; /* Smaller font size for very small screens */
+    }
+
+    .project-description {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .project-image {
+        width: 120px; /* Smaller width for very small screens */
+    }
+}
