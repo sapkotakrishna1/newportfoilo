@@ -15,6 +15,10 @@ body {
     margin: 10px;
 }
 
+#about {
+    text-align: justify;
+}
+
 /* Box Small Styling */
 .box-small {
     background: #030a11; /* Dark blue-gray background */
@@ -552,6 +556,7 @@ footer {
     color: #ccc; /* Light color for the text */
     font-size: 1rem; /* Font size for readability */
     line-height: 1.6; /* Improved readability */
+    text-align: justify;
 }
 
 /* Lightbox Styles */
