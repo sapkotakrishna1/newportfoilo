@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Krishna Sapkota | Portfolio</title>
+<title>Krishna Sapkota</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,6 +21,27 @@ scroll-behavior:smooth;
 body{
 background:#0b1220;
 color:white;
+}
+
+
+/* greeting */
+#greeting{
+animation: fadePulse 2s ease-in-out infinite;
+}
+
+@keyframes fadePulse{
+0%{
+opacity:0.6;
+transform:translateY(0);
+}
+50%{
+opacity:1;
+transform:translateY(-2px);
+}
+100%{
+opacity:0.6;
+transform:translateY(0);
+}
 }
 
 /* NAV */
@@ -420,6 +441,8 @@ border-radius:6px;
 <nav>
 <div class="menu" onclick="toggleMenu()">☰</div>
 
+<div id="greeting" style="color:#38bdf8;font-weight:600;font-size:14px;margin-right:auto;padding-left:10px;"></div>
+
 <div class="nav-links" id="nav">
 <a href="#home" onclick="closeMenu()">Home</a>
 <a href="#education" onclick="closeMenu()">Education</a>
@@ -505,7 +528,7 @@ Coming Soon • New Portfolio Version
 <div class="skill"><i class="fa-solid fa-mobile-screen"></i> Flutter
 <div class="bar"><div style="width:90%"></div></div></div>
 
-<div class="skill"><i class="fa-solid fa-code"></i> Dart
+<div class="skill"><i class="fa-solid fa-code"></i> Dart Dart
 <div class="bar"><div style="width:80%"></div></div></div>
 
 
@@ -536,9 +559,9 @@ Coming Soon • New Portfolio Version
 
 <div class="projects">
 
-<div class="project" onclick="openModal('images/Screenshot (11).png','Voting App','Secure voting system with authentication using Blockchain.')">
+<div class="project" onclick="openModal('images/Screenshot (11).png','Blockchain Voting','Secure voting system with authentication.')">
 <img src="images/Screenshot (11).png">
-<h3>Voting App</h3>
+<h3>Blockchain Voting</h3>
 <p class="project-info">Contact for more details</p>
 
 </div>
@@ -552,7 +575,7 @@ Coming Soon • New Portfolio Version
 
 <div class="project" onclick="openModal('images/screenshot-3.png','Student System','Student management system.')">
 <img src="images/screenshot-3.png">
-<h3>Student Management System</h3>
+<h3>Student System</h3>
 <p class="project-info">Contact for more details</p>
 
 </div>
@@ -619,7 +642,35 @@ function closeModal(){
 document.getElementById("modal").style.display="none";
 }
 
+
+function updateGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    let greeting = "";
+
+    if (hour < 12) {
+        greeting = "🌅 Good Morning";
+    } else if (hour < 18) {
+        greeting = "🌞 Good Afternoon";
+    } else {
+        greeting = "🌙 Good Evening";
+    }
+
+    const time = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    document.getElementById("greeting").innerText = `${greeting} • ${time}`;
+}
+
+updateGreeting();
+setInterval(updateGreeting, 1000);
+
 </script>
+
+
 
 </body>
 </html>
