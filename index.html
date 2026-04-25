@@ -1,236 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="images/IMG_4107.jpg" style="border-radius: 50%;" type="images">
-    <title>Krishna</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Krishna Sapkota | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b1220;
+color:white;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+padding:15px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.menu{
+display:none;
+font-size:26px;
+cursor:pointer;
+color:white;
+position:fixed;
+left:20px;
+top:15px;
+z-index:1100;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:#cbd5e1;
+text-decoration:none;
+font-size:15px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#38bdf8;
+}
+
+@media(max-width:768px){
+.menu{display:block;}
+
+.nav-links{
+position:fixed;
+top:0;
+left:-260px;
+width:250px;
+height:100vh;
+background:#111827;
+flex-direction:column;
+padding:80px 20px;
+gap:20px;
+transition:0.3s;
+}
+
+.nav-links.active{
+left:0;
+}
+}
+
+/* OVERLAY */
+.overlay-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+z-index:999;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:radial-gradient(circle,#111827,#0b1220);
+}
+
+.hero h1{
+font-size:3.5rem;
+color:#38bdf8;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+.hero p{
+color:#94a3b8;
+max-width:600px;
+margin-top:10px;
+}
+
+.location{
+margin-top:10px;
+display:inline-block;
+padding:6px 12px;
+background:#111827;
+border-radius:20px;
+color:#94a3b8;
+font-size:13px;
+}
+
+/* STATUS BADGE */
+.status-badge{
+margin-top:12px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:6px 14px;
+background:rgba(56,189,248,0.1);
+border:1px solid rgba(56,189,248,0.4);
+border-radius:20px;
+color:#38bdf8;
+font-size:12px;
+letter-spacing:1px;
+animation:glow 2s infinite alternate;
+}
+
+/* blinking dot */
+.dot{
+width:8px;
+height:8px;
+background:#38bdf8;
+border-radius:50%;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0.3;}
+}
+
+@keyframes glow{
+0%{box-shadow:0 0 0 rgba(56,189,248,0);}
+100%{box-shadow:0 0 20px rgba(56,189,248,0.4);}
+}
+
+
+
+/* BUTTONS */
+.btns{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
+
+.btn{
+display:inline-block;
+text-decoration:none;
+padding:12px 20px;
+border-radius:8px;
+font-weight:600;
+}
+
+.primary{background:#38bdf8;color:#000;}
+.dark{background:#1f2937;color:white;}
+
+/* SECTION */
+section{
+padding:80px 10%;
+}
+
+.title{
+font-size:1.8rem;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+/* EDUCATION */
+.card{
+background:#111827;
+padding:20px;
+border-radius:12px;
+margin-top:10px;
+}
+
+/* SKILLS */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.skill{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.skill i{
+color:#38bdf8;
+margin-right:6px;
+font-size:16px;
+}
+
+.bar{
+height:6px;
+background:#1f2937;
+border-radius:5px;
+margin-top:8px;
+overflow:hidden;
+}
+
+.bar div{
+height:100%;
+background:#38bdf8;
+}
+
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.project{
+background:rgba(17,24,39,0.9);
+border-radius:16px;
+overflow:hidden;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.project:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(56,189,248,0.25);
+}
+
+.project img{
+width:100%;
+height:180px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.project:hover img{
+transform:scale(1.05);
+}
+
+.project h3{
+padding:12px 15px 5px;
+color:#38bdf8;
+}
+
+.project-info{
+padding:0 15px 10px;
+color:#94a3b8;
+font-size:13px;
+}
+
+.project-btn{
+margin:10px 15px 15px;
+padding:10px;
+background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+color:#000;
+text-align:center;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+display:block;
+transition:0.3s;
+}
+
+.project-btn:hover{
+transform:scale(1.03);
+background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+color:white;
+}
+
+.education-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.edu-card{
+background:#111827;
+padding:20px;
+border-radius:14px;
+display:flex;
+gap:15px;
+align-items:flex-start;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.edu-card:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+box-shadow:0 10px 25px rgba(56,189,248,0.15);
+}
+
+.edu-icon{
+font-size:22px;
+color:#38bdf8;
+min-width:30px;
+}
+
+.edu-content h3{
+color:#38bdf8;
+font-size:16px;
+margin-bottom:5px;
+}
+
+.edu-content p{
+color:#cbd5e1;
+font-size:14px;
+}
+
+.edu-content span{
+color:#94a3b8;
+font-size:12px;
+display:block;
+margin-top:4px;
+}
+
+/* CONTACT */
+input,textarea{
+width:100%;
+margin-top:10px;
+padding:10px;
+border:none;
+border-radius:6px;
+background:#0f172a;
+color:white;
+}
+
+.footer{
+margin-top:40px;
+padding:25px 10%;
+text-align:center;
+background:#0f172a;
+border-top:1px solid rgba(255,255,255,0.05);
+color:#64748b;
+font-size:13px;
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#111827;
+padding:20px;
+border-radius:10px;
+max-width:400px;
+text-align:center;
+}
+
+.modal-content img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.modal-content button{
+margin-top:10px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+cursor:pointer;
+border-radius:6px;
+}
+
+
+
+</style>
 </head>
+
 <body>
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Side Box (Small) -->
-        <div class="box-small">
-            <!-- Toggle Button (visible only on small screens) -->
-            <button id="menu-toggle" aria-label="Toggle menu" class="menu-toggle">&#9776;</button>
 
-            <!-- User Image and Contact Info -->
-            <div class="image-container">
-                <img src="images/IMG_4912 (1).jpg" alt="Krishna Sapkota" class="about-image">
-            </div>
-            <div class="contact-info">
-                <div class="info-item">
-                    <p>Email:</p>
-                    <p><a href="mailto:sapkotakrishna016@gmail.com">sapkotakrishna016@gmail.com</a></p>
-                </div>
-                <div class="info-item">
-                    <p>Location:</p>
-                    <p>Baglung, Nepal</p>
-                </div>
-                <div class="info-item">
-                    <p>Contact:</p>
-                    <p>9846899440</p>
-                </div>
-                <div class="info-item">
-                    <p></p>
-                    <a href="images/my cv (3).pdf" target="_blank">View CV</a>
-                    <!-- Ensure you replace "path/to/your/cv.pdf" with the actual path to your PDF file -->
-                </div>
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/in/krishna-sapkota-a172ab250/" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/sapkotakrishna1" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-                
-            </div>
-            
-        </div>
+<!-- NAV -->
+<nav>
+<div class="menu" onclick="toggleMenu()">☰</div>
 
-        <!-- Large Box (Right) -->
-        <div class="box-large">
-            <!-- Navigation Menu -->
-            <nav class="side-nav" id="nav-menu">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<div class="nav-links" id="nav">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#education" onclick="closeMenu()">Education</a>
+<a href="#skills" onclick="closeMenu()">Skills</a>
+<a href="#projects" onclick="closeMenu()">Projects</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+</nav>
 
-            <!-- Main Content -->
-            <section id="about">
-                <h2>About Me</h2>
-                <p>I’m a straightforward engineering student specializing in IT, dedicated 
-                    to mastering the latest technologies and solving technical challenges. 
-                    I focus on building practical skills through hands-on projects and collaborative 
-                    work. Passionate about technology and problem-solving, I aim to leverage my 
-                    knowledge to create impactful solutions and continuously grow in the IT field.</p>
-                <hr>
-            </section>
+<!-- OVERLAY -->
+<div class="overlay-bg" id="overlay" onclick="closeMenu()"></div>
 
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>PHP, MySQL, Basic MongoDB</li>
-                    <li>Flutter, Dart</li>
-                    <li>Responsive Design</li>
-                </ul>
-            </section>
+<!-- HERO -->
+<section class="hero" id="home">
 
-            <section id="education">
-                <h2>Education</h2>
-                
-                <!-- Timeline Container -->
-                <div class="timeline">
-                    
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item">
-                        <div class="circle-dot"></div>
-                        <h3 class="timeline-date">
-                            <i class="fa fa-calendar"></i> 2019
-                        </h3>
-                        <h4 class="timeline-title">Basic level education</h4>
-                        <p class="timeline-text">I completed my SEE from Universal Sublime Academy Baglung.</p>
-                    </div>
-            
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item">
-                        <div class="circle-dot"></div>
-                        <h3 class="timeline-date">
-                            <i class="fa fa-calendar"></i> 2021
-                        </h3>
-                        <h4 class="timeline-title">Secondary level Education</h4>
-                        <p class="timeline-text">I completed my +2 education from Vidhya Mandir Higher Secondary School Baglung.</p>
-                    </div>
-            
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item">
-                        <div class="circle-dot"></div>
-                        <h3 class="timeline-date">
-                            <i class="fa fa-calendar"></i> 2024
-                        </h3>
-                        <h4 class="timeline-title">Bachelor of Engineering in Information Technology (BEIT)</h4>
-                        <p class="timeline-text">Currently studying in the eighth semester at Nepal College of Information Technology (NCIT), Balkumari, Lalitpur.</p>
-                    </div>
-                    
-                </div>
-            </section>
+<h1>Krishna Sapkota</h1>
+
+<p>IT Graduate | Mobile App Developer | Web Developer</p>
+
+<!-- LOCATION -->
+<div class="location">
+📍 Lalitpur, Nepal
+</div>
+
+<!-- 🔥 ANIMATED STATUS -->
+<div class="status-badge">
+<span class="dot"></span>
+Coming Soon • New Portfolio Version
+</div>
+
+<!-- BUTTONS -->
+<div class="btns">
+<a href="images/my cv (1).pdf" download class="btn primary">Hire Me</a>
+<a href="https://github.com/sapkotakrishna1" target="_blank" class="btn dark">GitHub</a>
+</div>
+
+</section>
+
+<section id="education">
+<div class="title">Education</div>
+
+<div class="education-grid">
+
+<!-- ITEM 1 -->
+<div class="edu-card">
+<div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+<div class="edu-content">
+<h3>Bachelor of Engineering in Information Technology</h3>
+<p>Nepal College of Information Technology (NCIT)</p>
+<span>Lalitpur, Nepal</span>
+</div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="edu-card">
+<div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+<div class="edu-content">
+<h3>+2 Science</h3>
+<p>Vidhya Mandir Higher Secondary School</p>
+<span>Baglung, Nepal</span>
+</div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="edu-card">
+<div class="edu-icon"><i class="fa-solid fa-book"></i></div>
+<div class="edu-content">
+<h3>Secondary Education (SEE)</h3>
+<p>Universal Sublime Academy</p>
+<span>Baglung, Nepal</span>
+</div>
+</div>
+
+</div>
+</section>
 
 
+<!-- SKILLS -->
+<section id="skills">
+<div class="title">Skills</div>
 
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="projects-container">
-                    <div class="project-item">
-                        <div class="project-images">
-                            <img src="images/screenshot-1.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                            <img src="images/screenshot-2.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                            <img src="images/screenshot-3.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                            <img src="images/screenshot-4.png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                        </div>
-                        <div class="project-info">
-                            <p class="project-description">
-                                <strong>Description:</strong> Developed a comprehensive Student Management System to streamline student records and administrative tasks.
-                            </p>
-                            <p class="project-description">
-                                <strong>Technologies Used:</strong>
-                                <ul>
-                                    <li>PHP for backend development</li>
-                                    <li>MySQL for database management</li>
-                                    <li>HTML, CSS, and JavaScript for the frontend</li>
-                                </ul>
-                            </p>
-                            <p class="project-description">
-                                <strong>Key Features:</strong>
-                                <ul>
-                                    <li>Student registration</li>
-                                    <li>Record management</li>
-                                    <li>Real-time updates</li>
-                                </ul>
-                                Implemented robust data handling and user interface elements to enhance usability and efficiency.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-images">
-                            <img src="images/Screenshot (11).png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                            <img src="images/Screenshot (12).png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                            <img src="images/Screenshot (13).png" alt="Project Image" class="project-image" onclick="openLightbox(this)">
-                        </div>
-                        <div class="project-info">
-                            <p class="project-description">
-                                <strong>Description:</strong> Developed a comprehensive second-hand item selling mobile application using Flutter to streamline student transactions and facilitate easy listing and purchasing of items.
-                            </p>
-                            <p class="project-description">
-                                <strong>Technologies Used:</strong>
-                                <ul>
-                                    <li>Flutter for mobile application development</li>
-                                    <li>Dart programming language</li>
-                                    <li>PHP for backend development</li>
-                                <li>MySQL for database management</li>
-                                </ul>
-                            </p>
-                            <p class="project-description">
-                                <strong>Key Features:</strong>
-                                <ul>
-                                    <li>User registration and authentication Through OTP</li>
-                                    <li>Listing and searching for items</li>
-                                    <li>Real-time item availability updates</li>
-                                </ul>
-                                Implemented seamless data management and a clean UI to enhance the user experience.
-                            </p>
-                        </div>
-                    </div>
-                   
-                    
-                    <!-- Repeat .project-item for more projects -->
-                </div>
-            
-                <!-- Lightbox Container -->
-                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                    <span class="close">&times;</span>
-                    <img id="lightbox-img" class="lightbox-img" src="" alt="Lightbox Image">
-                </div>
-            </section>
-            
-            
-            
+<div class="skills">
+<div class="skill"><i class="fa-solid fa-mobile-screen"></i> Flutter
+<div class="bar"><div style="width:90%"></div></div></div>
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Feel free to reach out to me through the contact form below or via email.</p>
-                <form action="mailto:sapkotakrishna016@gmail.com" method="post" enctype="text/plain">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    
-                    <button type="submit">Send</button>
-                </form>
-            </section>
-        </div>
-    </div>
+<div class="skill"><i class="fa-solid fa-code"></i> Dart Dart
+<div class="bar"><div style="width:80%"></div></div></div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Krishna Sapkota. All rights reserved.</p>
-    </footer>
 
-    <!-- JavaScript File -->
-    <script src="script.js"></script>
+<div class="skill"><i class="fa-brands fa-react"></i> React
+<div class="bar"><div style="width:80%"></div></div></div>
+
+<div class="skill"><i class="fa-brands fa-php"></i> PHP
+<div class="bar"><div style="width:85%"></div></div></div>
+
+<div class="skill"><i class="fa-brands fa-node-js"></i> Node.js
+<div class="bar"><div style="width:50%"></div></div></div>
+
+<div class="skill"><i class="fa-brands fa-html5"></i> HTML
+<div class="bar"><div style="width:85%"></div></div></div>
+
+<div class="skill"><i class="fa-brands fa-css3-alt"></i> CSS
+<div class="bar"><div style="width:70%"></div></div></div>
+
+<div class="skill"><i class="fa-brands fa-git-alt"></i> Git
+<div class="bar"><div style="width:65%"></div></div></div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="title">Projects</div>
+
+<div class="projects">
+
+<div class="project" onclick="openModal('images/Screenshot (11).png','Blockchain Voting','Secure voting system with authentication.')">
+<img src="images/Screenshot (11).png">
+<h3>Blockchain Voting</h3>
+<p class="project-info">Contact for more details</p>
+
+</div>
+
+<div class="project" onclick="openModal('images/Screenshot (12).png','E-Commerce App','Second-hand marketplace application.')">
+<img src="images/Screenshot (12).png">
+<h3>E-Commerce App</h3>
+<p class="project-info">Contact for more details</p>
+
+</div>
+
+<div class="project" onclick="openModal('images/screenshot-3.png','Student System','Student management system.')">
+<img src="images/screenshot-3.png">
+<h3>Student System</h3>
+<p class="project-info">Contact for more details</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="title">Contact</div>
+
+<p style="color:#94a3b8; margin-bottom:10px;">
+Send me a message directly via email.
+</p>
+
+<form action="mailto:sapkotakrishna016@gmail.com" method="post" enctype="text/plain">
+
+<input name="name" placeholder="Name" required>
+<input name="email" placeholder="Email" required>
+<textarea name="message" rows="4" placeholder="Message" required></textarea>
+
+<button type="submit" class="btn primary">
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<footer class="footer">
+<p>© <span id="year"></span> 2025 Krishna Sapkota | IT Engineer</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+<div class="modal-content" onclick="event.stopPropagation()">
+<img id="mimg">
+<h3 id="mtitle"></h3>
+<p id="mdesc"></p>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
+document.getElementById("overlay").style.display="block";
+}
+
+function closeMenu(){
+document.getElementById("nav").classList.remove("active");
+document.getElementById("overlay").style.display="none";
+}
+
+function openModal(img,title,desc){
+document.getElementById("modal").style.display="flex";
+document.getElementById("mimg").src=img;
+document.getElementById("mtitle").innerText=title;
+document.getElementById("mdesc").innerText=desc;
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+
 </body>
 </html>
-
-
-
